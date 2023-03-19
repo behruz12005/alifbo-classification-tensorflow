@@ -48,8 +48,6 @@ if image_file is not None:
     # Resizing array to (70, 70)
     resized_arr = np.resize(arr, (70, 70))
 
-    st.write(arr)
-    st.write(resized_arr)
 
 
     # Tasvirlarni sinash va natijani ko'rsatish
