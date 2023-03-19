@@ -37,7 +37,8 @@ if image_file is not None:
     image = Image.open(image_file)
     view_image(image)
     img = np.array(img)
-    img = img[:,:,0]
+    if img == 3:       
+        img = img[:,:,0]
     img = img.reshape(-1, 70, 70, 1)
     img = img / 255.0
     model = load_model()
