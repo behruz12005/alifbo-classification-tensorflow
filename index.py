@@ -24,10 +24,6 @@ def load_model():
     return model
 
 
-if image_file is not None:
-    image_bytes = np.asarray(bytearray(image_file.read()), dtype=np.uint8)
-    # Tasvirni OpenCV kutubxonasi yordamida yuklash
-    tasvir = cv2.imdecode(image_bytes, cv2.IMREAD_COLOR)
 # Tasvir qabul qilishni tekshirish
 
 
