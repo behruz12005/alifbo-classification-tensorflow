@@ -3,7 +3,6 @@ import tensorflow as tf
 from PIL import Image
 import tensorflow as tf
 from PIL import Image as PILImage
-import cv2
 import numpy as np
 from keras.models import load_model
 
@@ -12,6 +11,7 @@ from keras.models import load_model
 image_file = st.file_uploader("Tasvirni yuklang", type=["jpg", "jpeg", "png"])
 if image_file is not None:
     img = PILImage.open(image_file)
+    img = img.resize((70, 70))
 
 
 # Tasvirni ko'rish uchun funksiya
@@ -41,10 +41,19 @@ if image_file is not None:
     image = Image.open(image_file)
     view_image(image)
     img = np.array(img)
-    img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
     img = img.reshape(-1, 70, 70, 1)
     img = img / 255.0
     model = load_model()
+    import numpy as np
+
+    # Test array
+    arr = np.random.rand(300, 300)
+
+    # Resizing array to (70, 70)
+    resized_arr = np.resize(arr, (70, 70))
+
+    st.write(arr)
+    st.write(resized_arr)
 
 
     # Tasvirlarni sinash va natijani ko'rsatish
