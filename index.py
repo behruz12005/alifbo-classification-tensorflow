@@ -6,6 +6,7 @@ from PIL import Image as PILImage
 import numpy as np
 from keras.models import load_model
 
+st.write('Faqat harflardan tashkil qilgan rasmlardan foydalanib rasm joylashtiring !')
 
 # Tasvir qabul qilish oynasi
 image_file = st.file_uploader("Tasvirni yuklang", type=["jpg", "jpeg", "png"])
